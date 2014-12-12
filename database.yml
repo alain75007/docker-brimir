@@ -5,11 +5,11 @@
 #   gem 'sqlite3'
 development:
   adapter: mysql2 
-  host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] %>
-  port: <%= ENV['MYSQL_PORT'] %>
+  host: <%= ENV['DB_1_PORT_3306_TCP_ADDR'] %>
+  port: <%= ENV['DB_1_PORT'] %>
   database: development_brimir 
   username: root 
-  password: <%= ENV['MYSQL_ENV_MYSQL_ROOT_PASSWORD'] %>
+  password: <%= ENV['DB_1_ENV_MYSQL_ROOT_PASSWORD'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,8 +22,8 @@ test:
 
 production:
   adapter: mysql2 
-  host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] %>
-  port: <%= ENV['MYSQL_PORT'] %>
+  host: <%= ENV['DB_1_PORT_3306_TCP_ADDR'] %>
+  port: <%= ENV['DB_1_PORT'] %>
   database: production_brimir 
   username: root 
-  password: <%= ENV['MYSQL_ENV_MYSQL_ROOT_PASSWORD'] %>
+  password: <%= ENV['DB_1_ENV_MYSQL_ROOT_PASSWORD'] %>

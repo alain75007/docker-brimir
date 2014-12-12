@@ -1,0 +1,13 @@
+db:
+  image: mysql:latest
+  environment: 
+    MYSQL_ROOT_PASSWORD: mysecretpassword 
+    MYSQL_DATABASE: production_brimir
+web:
+  build: .
+  volumes:
+    - .:/public/system
+  ports:
+    - "3000:3000"
+  links:
+    - db

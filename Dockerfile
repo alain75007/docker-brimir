@@ -26,7 +26,5 @@ RUN echo "Devise.secret_key= ENV['DEVISE_SECRET_KEY']" >> /opt/brimir/config/ini
 ENV SECRET_KEY_BASE e1dd1f2fa691750f01e19de0ab7066263251d06a3c4a33ab5dfa6ab0500cd4911ab9e53c118587e91ccd9577dacb13b00b70692c79fc3818ee09a9395d372b3e
 RUN tail /opt/brimir/config/initializers/devise.rb 
 
-CMD rake db:schema:load && rake assets:precompile && perl -p -i -e 's/config.serve_static_assets .*/config.serve_static_assets = true/' config/environments/production.rb && rails server 
+CMD rake db:create && rake db:schema:load && rake assets:precompile && perl -p -i -e 's/config.serve_static_assets .*/config.serve_static_assets = true/' config/environments/production.rb && rails server 
 
-
-#RUN bundle exec rake db:drop db:create db:migrate
